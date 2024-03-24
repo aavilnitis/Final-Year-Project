@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module sudoku_solver_gui</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">sudoku_solver_gui</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/Users/aavilnitis/Desktop/Uni/PROJECT/Sudoku_Solver/sudoku_solver_gui.py">/Users/aavilnitis/Desktop/Uni/PROJECT/Sudoku_Solver/sudoku_solver_gui.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="customtkinter.html">customtkinter</a><br>
+</td><td class="multicolumn"><a href="random.html">random</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="sudoku_solver_gui.html#SudokuGUI">SudokuGUI</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="SudokuGUI">class <strong>SudokuGUI</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#SudokuGUI">SudokuGUI</a>(all_games)<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;used&nbsp;to&nbsp;create&nbsp;a&nbsp;graphical&nbsp;user&nbsp;interface&nbsp;for&nbsp;Sudoku&nbsp;puzzles.<br>
+...<br>
+&nbsp;<br>
+Attributes<br>
+----------<br>
+all_games&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;string&nbsp;containing&nbsp;all&nbsp;Sudoku&nbsp;games<br>
+sudoku_games&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;list&nbsp;of&nbsp;strings,&nbsp;each&nbsp;of&nbsp;length&nbsp;81,&nbsp;representing&nbsp;Sudoku&nbsp;games<br>
+selected_cell&nbsp;:&nbsp;CTkButton<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;currently&nbsp;selected&nbsp;button&nbsp;on&nbsp;the&nbsp;Sudoku&nbsp;board<br>
+global_i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;row&nbsp;index&nbsp;of&nbsp;the&nbsp;selected&nbsp;cell<br>
+global_j&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;column&nbsp;index&nbsp;of&nbsp;the&nbsp;selected&nbsp;cell<br>
+started&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;flag&nbsp;indicating&nbsp;whether&nbsp;a&nbsp;game&nbsp;has&nbsp;started<br>
+original_entry_indices&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;list&nbsp;of&nbsp;indices&nbsp;of&nbsp;the&nbsp;original&nbsp;entries&nbsp;in&nbsp;the&nbsp;Sudoku&nbsp;game<br>
+random_game&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;list&nbsp;of&nbsp;81&nbsp;digits&nbsp;representing&nbsp;a&nbsp;random&nbsp;Sudoku&nbsp;game<br>
+window&nbsp;:&nbsp;CTk<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;main&nbsp;window&nbsp;of&nbsp;the&nbsp;Sudoku&nbsp;GUI<br>
+frame&nbsp;:&nbsp;CTkFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;frame&nbsp;containing&nbsp;the&nbsp;Sudoku&nbsp;board&nbsp;and&nbsp;cells<br>
+number_frame&nbsp;:&nbsp;CTkFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;frame&nbsp;containing&nbsp;the&nbsp;number&nbsp;buttons<br>
+control_frame&nbsp;:&nbsp;CTkFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;frame&nbsp;containing&nbsp;the&nbsp;control&nbsp;buttons<br>
+label_frame&nbsp;:&nbsp;CTkFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;frame&nbsp;containing&nbsp;the&nbsp;error&nbsp;label<br>
+buttons&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;2D&nbsp;list&nbsp;of&nbsp;buttons&nbsp;representing&nbsp;the&nbsp;cells&nbsp;on&nbsp;the&nbsp;Sudoku&nbsp;board<br>
+number_buttons&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;list&nbsp;of&nbsp;buttons&nbsp;representing&nbsp;the&nbsp;number&nbsp;buttons<br>
+load_game_button&nbsp;:&nbsp;CTkButton<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;button&nbsp;used&nbsp;to&nbsp;load&nbsp;a&nbsp;game<br>
+solve_game_button&nbsp;:&nbsp;CTkButton<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;button&nbsp;used&nbsp;to&nbsp;solve&nbsp;a&nbsp;game<br>
+label&nbsp;:&nbsp;CTkLabel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;label&nbsp;used&nbsp;to&nbsp;display&nbsp;error&nbsp;messages<br>
+&nbsp;<br>
+Methods<br>
+-------<br>
+<a href="#SudokuGUI-get_fg_color">get_fg_color</a>(i,&nbsp;j)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;foreground&nbsp;color&nbsp;for&nbsp;a&nbsp;cell&nbsp;based&nbsp;on&nbsp;its&nbsp;indices.<br>
+<a href="#SudokuGUI-get_hover_color">get_hover_color</a>(i,&nbsp;j)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;hover&nbsp;color&nbsp;for&nbsp;a&nbsp;cell&nbsp;based&nbsp;on&nbsp;its&nbsp;indices.<br>
+<a href="#SudokuGUI-clear_buttons">clear_buttons</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Clears&nbsp;all&nbsp;the&nbsp;buttons&nbsp;on&nbsp;the&nbsp;board.<br>
+<a href="#SudokuGUI-start_game">start_game</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Starts&nbsp;a&nbsp;new&nbsp;Sudoku&nbsp;game.<br>
+<a href="#SudokuGUI-set_selected">set_selected</a>(i,&nbsp;j)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Sets&nbsp;a&nbsp;cell&nbsp;as&nbsp;selected&nbsp;and&nbsp;changes&nbsp;its&nbsp;background&nbsp;color.<br>
+<a href="#SudokuGUI-clear_selected">clear_selected</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Clears&nbsp;the&nbsp;selection&nbsp;by&nbsp;restoring&nbsp;default&nbsp;background&nbsp;and&nbsp;hover&nbsp;colors.<br>
+<a href="#SudokuGUI-place_number">place_number</a>(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Places&nbsp;a&nbsp;number&nbsp;on&nbsp;the&nbsp;board&nbsp;if&nbsp;the&nbsp;selected&nbsp;cell&nbsp;is&nbsp;valid.<br>
+<a href="#SudokuGUI-get_illegal_entries">get_illegal_entries</a>(row,&nbsp;column)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;a&nbsp;set&nbsp;of&nbsp;numbers&nbsp;that&nbsp;cannot&nbsp;be&nbsp;placed&nbsp;in&nbsp;the&nbsp;given&nbsp;cell.<br>
+<a href="#SudokuGUI-solve_game_function">solve_game_function</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Solves&nbsp;the&nbsp;Sudoku&nbsp;game&nbsp;using&nbsp;the&nbsp;SudokuSolver&nbsp;class.<br>
+<a href="#SudokuGUI-enter_solved_board">enter_solved_board</a>(solved_board)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enters&nbsp;the&nbsp;solved&nbsp;game&nbsp;array&nbsp;into&nbsp;the&nbsp;Sudoku&nbsp;grid&nbsp;to&nbsp;show&nbsp;the&nbsp;solution.<br>
+<a href="#SudokuGUI-run">run</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Runs&nbsp;the&nbsp;Sudoku&nbsp;game.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="SudokuGUI-__init__"><strong>__init__</strong></a>(self, all_games)</dt><dd><span class="code">Constructs&nbsp;a&nbsp;new&nbsp;<a href="#SudokuGUI">SudokuGUI</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+all_games&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;string&nbsp;containing&nbsp;all&nbsp;Sudoku&nbsp;games</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-clear_buttons"><strong>clear_buttons</strong></a>(self)</dt><dd><span class="code">Clears&nbsp;all&nbsp;the&nbsp;buttons&nbsp;on&nbsp;the&nbsp;board.</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-clear_selected"><strong>clear_selected</strong></a>(self)</dt><dd><span class="code">Clears&nbsp;the&nbsp;selection&nbsp;by&nbsp;restoring&nbsp;default&nbsp;background&nbsp;and&nbsp;hover&nbsp;colors.</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-enter_solved_board"><strong>enter_solved_board</strong></a>(self, solved_board)</dt><dd><span class="code">Enters&nbsp;the&nbsp;solved&nbsp;game&nbsp;array&nbsp;into&nbsp;the&nbsp;Sudoku&nbsp;grid&nbsp;to&nbsp;show&nbsp;the&nbsp;solution.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+solved_board&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;solved&nbsp;Sudoku&nbsp;board</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-get_fg_color"><strong>get_fg_color</strong></a>(self, i, j)</dt><dd><span class="code">Returns&nbsp;the&nbsp;foreground&nbsp;color&nbsp;for&nbsp;a&nbsp;cell&nbsp;based&nbsp;on&nbsp;its&nbsp;indices.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;row&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+j&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;column&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;foreground&nbsp;color&nbsp;for&nbsp;the&nbsp;cell</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-get_hover_color"><strong>get_hover_color</strong></a>(self, i, j)</dt><dd><span class="code">Returns&nbsp;the&nbsp;hover&nbsp;color&nbsp;for&nbsp;a&nbsp;cell&nbsp;based&nbsp;on&nbsp;its&nbsp;indices.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;row&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+j&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;column&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;hover&nbsp;color&nbsp;for&nbsp;the&nbsp;cell</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-get_illegal_entries"><strong>get_illegal_entries</strong></a>(self, row, column)</dt><dd><span class="code">Returns&nbsp;a&nbsp;set&nbsp;of&nbsp;numbers&nbsp;that&nbsp;cannot&nbsp;be&nbsp;placed&nbsp;in&nbsp;the&nbsp;given&nbsp;cell.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+row&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;row&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+column&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;column&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+set<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;set&nbsp;of&nbsp;numbers&nbsp;that&nbsp;cannot&nbsp;be&nbsp;placed&nbsp;in&nbsp;the&nbsp;cell</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-place_number"><strong>place_number</strong></a>(self, i)</dt><dd><span class="code">Places&nbsp;a&nbsp;number&nbsp;on&nbsp;the&nbsp;board&nbsp;if&nbsp;the&nbsp;selected&nbsp;cell&nbsp;is&nbsp;valid.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;number&nbsp;to&nbsp;be&nbsp;placed&nbsp;on&nbsp;the&nbsp;board</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-run"><strong>run</strong></a>(self)</dt><dd><span class="code">Runs&nbsp;the&nbsp;Sudoku&nbsp;game.</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-set_selected"><strong>set_selected</strong></a>(self, i, j)</dt><dd><span class="code">Sets&nbsp;a&nbsp;cell&nbsp;as&nbsp;selected&nbsp;and&nbsp;changes&nbsp;its&nbsp;background&nbsp;color.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+i&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;row&nbsp;index&nbsp;of&nbsp;the&nbsp;cell<br>
+j&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;column&nbsp;index&nbsp;of&nbsp;the&nbsp;cell</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-solve_game_function"><strong>solve_game_function</strong></a>(self)</dt><dd><span class="code">Solves&nbsp;the&nbsp;Sudoku&nbsp;game&nbsp;using&nbsp;the&nbsp;SudokuSolver&nbsp;class.</span></dd></dl>
+
+<dl><dt><a name="SudokuGUI-start_game"><strong>start_game</strong></a>(self)</dt><dd><span class="code">Starts&nbsp;a&nbsp;new&nbsp;Sudoku&nbsp;game.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>all_games</strong> = '003020600900305001001806400008102900700000008006708200002609500800203009005010300'<br>
+<strong>file</strong> = &lt;_io.TextIOWrapper name='./sudoku_games/one_sudoku.txt' mode='r' encoding='UTF-8'&gt;<br>
+<strong>sudoku</strong> = &lt;sudoku_solver_gui.SudokuGUI object&gt;</td></tr></table>
+</body></html>

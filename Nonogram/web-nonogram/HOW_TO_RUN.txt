@@ -1,0 +1,3 @@
+in web-app directory:
+    npm install to install missing dependencies
+    npm start to run development server
